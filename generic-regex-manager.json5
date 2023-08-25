@@ -18,7 +18,8 @@
           "# renovate-docker.*\\n.*?: (?<depName>[^:].*?):(?<currentValue>[^@].*?)[@\\n]+(?<currentDigest>sha256:[a-f0-9]+)?"
         ],
         "versioningTemplate": "docker",
-        "datasourceTemplate": "docker"
+        "datasourceTemplate": "docker",
+        "autoReplaceStringTemplate": "{{newValue}}{{#if newDigest}}@{{newDigest}}{{/if}}"
       }
     ]
   }
