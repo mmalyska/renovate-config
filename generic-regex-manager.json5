@@ -15,9 +15,10 @@
         "description": ["Process various dependencies in YAML files for docker"],
         "fileMatch": [".+\\.ya?ml$"],
         "matchStrings": [
-          "# renovate-docker: datasource=(?<datasource>.*?)( versioning=(?<versioning>.*=?))? depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?\\n.*?: ?(.*?:(?<currentValue>[^@].*)(@(?<currentDigest>sha256:[a-f0-9]+))?)"
+          "# renovate-docker.*\\n.*?: (?<depName>[^:].*?):(?<currentValue>[^@].*?)[@\\n]+(?<currentDigest>sha256:[a-f0-9]+)?"
         ],
-        "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}docker{{/if}}"
+        "versioningTemplate": "docker",
+        "datasourceTemplate": "docker"
       }
     ]
   }
