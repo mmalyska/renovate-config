@@ -5,7 +5,7 @@
         "description": ["Process various dependencies in YAML files"],
         "fileMatch": [".+\\.ya?ml$"],
         "matchStrings": [
-          "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*=?))?( versionTemplate=(?<versionTemplate>.*=?))?\\n.*: ?(\"?(?<currentValue>[^\"\\n]+=?)\"?)",
+          "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*=?))?( versionTemplate=(?<versionTemplate>.*=?))?\\n.*[:=] ?(\"?(?<currentValue>[^\"\\n]+=?)\"?)",
           "# renovate-raw: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\n.*\\/(?<currentValue>v.*?)\\/", //for kustomize https://github.com/dep/dep/v1.0.0/folder/sub/folder
         ],
         "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
