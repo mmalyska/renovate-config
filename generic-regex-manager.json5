@@ -17,10 +17,11 @@
         "description": ["Process various dependencies in YAML files for docker"],
         "fileMatch": [".+\\.ya?ml$"],
         "matchStrings": [
-          "# renovate-docker.*\\n.*?: (?<depName>[^:].*?):(?<currentValue>[^@].*?)[@\\n]+(?<currentDigest>sha256:[a-f0-9]+)?"
+          "# renovate-docker.*\\n(?<indentation>\\s+): (?<depName>[^:].*?):(?<currentValue>[^@].*?)[@\\n]+(?<currentDigest>sha256:[a-f0-9]+)?"
         ],
         "versioningTemplate": "docker",
-        "datasourceTemplate": "docker"
+        "datasourceTemplate": "docker",
+        "autoReplaceStringTemplate": "# renovate-docker\n{{indentation}}{{depName}}:{{newValue}}{{#if newDigest}}:{{{newDigest}}}{{/if}}{{#if currentDigest}}:{{{currentDigest}}}{{/if}}"
       }
     ]
   }
