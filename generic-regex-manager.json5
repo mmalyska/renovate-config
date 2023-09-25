@@ -21,7 +21,7 @@
         ],
         "versioningTemplate": "docker",
         "datasourceTemplate": "docker",
-        "autoReplaceStringTemplate": "# renovate-docker\n{{indentation}}image: {{depName}}:{{newValue}}{{#if newDigest}}:{{{newDigest}}}{{else if currentDigest}}:{{{currentDigest}}}{{/if}}"
+        "autoReplaceStringTemplate": "# renovate-docker\n{{indentation}}image: {{depName}}:{{newValue}}{{#if newDigest}}@{{{newDigest}}}{{else if currentDigest}}@{{{currentDigest}}}{{/if}}"
       }
     ]
   }
