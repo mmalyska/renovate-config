@@ -1,7 +1,8 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "regexManagers": [
+    "customManagers": [
       {
+        "customType": "regex",
         "description": ["Process various dependencies in YAML files"],
         "fileMatch": [".+\\.ya?ml$", "Dockerfile"],
         "matchStrings": [
@@ -12,6 +13,7 @@
         "extractVersionTemplate": "{{#if versionTemplate}}{{{versionTemplate}}}{{else}}{{/if}}"
       },
       {
+        "customType": "regex",
         "description": ["Process various dependencies in YAML files for docker"],
         "fileMatch": [".+\\.ya?ml$"],
         "matchStrings": [
