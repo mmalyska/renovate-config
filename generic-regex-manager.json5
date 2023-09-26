@@ -17,7 +17,7 @@
         "description": ["Process various dependencies in YAML files for docker"],
         "fileMatch": [".+\\.ya?ml$"],
         "matchStrings": [
-          "# renovate-docker\\s(?<indentation>\\s+)image: (?<depName>[^:].*?):(?<currentValue>[^@\\s]*)@?(?<currentDigest>sha256:[a-f0-9]+)?"
+          "# renovate-docker\\s(?<indentation>\\s+)image: (?<depName>[^:].*?):(?<currentValue>[^@\\s]*)(@(?<currentDigest>sha256:[a-f0-9]+))?"
         ],
         "versioningTemplate": "docker",
         "datasourceTemplate": "docker",
