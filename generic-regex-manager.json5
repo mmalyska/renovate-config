@@ -1,27 +1,27 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "customManagers": [
-      {
-        "customType": "regex",
-        "description": ["Process various dependencies in YAML files"],
-        "fileMatch": [".+\\.ya?ml$", "Dockerfile"],
-        "matchStrings": [
-          "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*=?))?( versionTemplate=(?<versionTemplate>.*=?))?\\n.*[:=] ?(\"?(?<currentValue>[^\"\\n]+=?)\"?)",
-          "# renovate-raw: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\n.*\\/(?<currentValue>v.*?)\\/", //for kustomize https://github.com/dep/dep/v1.0.0/folder/sub/folder
-        ],
-        "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
-        "extractVersionTemplate": "{{#if versionTemplate}}{{{versionTemplate}}}{{else}}{{/if}}"
-      },
-      {
-        "customType": "regex",
-        "description": ["Process various dependencies in YAML files for docker"],
-        "fileMatch": [".+\\.ya?ml$"],
-        "matchStrings": [
-          "# renovate-docker\\s(?<indentation>\\s+)image: (?<depName>[^:].*?):(?<currentValue>[^@\\s]*)(@(?<currentDigest>sha256:[a-f0-9]+))?"
-        ],
-        "versioningTemplate": "docker",
-        "datasourceTemplate": "docker",
-        "autoReplaceStringTemplate": "# renovate-docker\n{{indentation}}image: {{depName}}:{{newValue}}{{#if newDigest}}@{{{newDigest}}}{{else if currentDigest}}@{{{currentDigest}}}{{/if}}"
-      }
-    ]
-  }
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": ["Process various dependencies in YAML files"],
+      "fileMatch": [".+\\.ya?ml$", "Dockerfile"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*=?))?( versionTemplate=(?<versionTemplate>.*=?))?\\n.*[:=] ?(\"?(?<currentValue>[^\"\\n]+=?)\"?)",
+        "# renovate-raw: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\n.*\\/(?<currentValue>v.*?)\\/", //for kustomize https://github.com/dep/dep/v1.0.0/folder/sub/folder
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
+      "extractVersionTemplate": "{{#if versionTemplate}}{{{versionTemplate}}}{{else}}{{/if}}"
+    },
+    {
+      "customType": "regex",
+      "description": ["Process various dependencies in YAML files for docker"],
+      "fileMatch": [".+\\.ya?ml$"],
+      "matchStrings": [
+        "# renovate-docker\\s(?<indentation>\\s+)image: (?<depName>[^:].*?):(?<currentValue>[^@\\s]*)(@(?<currentDigest>sha256:[a-f0-9]+))?"
+      ],
+      "versioningTemplate": "docker",
+      "datasourceTemplate": "docker",
+      "autoReplaceStringTemplate": "# renovate-docker\n{{indentation}}image: {{depName}}:{{newValue}}{{#if newDigest}}@{{{newDigest}}}{{else if currentDigest}}@{{{currentDigest}}}{{/if}}"
+    }
+  ]
+}
