@@ -9,7 +9,9 @@
       ],
       matchStrings: [
         '\\s*"image":\\s"(?<registryUrls>.*?)\\/(?<depName>.*?):(?<currentValue>.*?)(@(?<currentDigest>sha256:[a-f0-9]+))?"'
-      ]
+      ],
+      "versioningTemplate": "docker",
+      "datasourceTemplate": "docker"
     }
   ]
 }
