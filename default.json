@@ -11,7 +11,8 @@
       "github>mmalyska/renovate-config:commit-message",
       "github>mmalyska/renovate-config:pr-labels",
       "github>mmalyska/renovate-config:semantic-commits",
-      "github>mmalyska/renovate-config:generic-regex-manager.json5"
+      "github>mmalyska/renovate-config:generic-regex-manager.json5",
+      "github>mmalyska/renovate-config:devcontainer-regex-manager.json5"
     ],
     "onboarding": false,
     "requireConfig": "optional",
