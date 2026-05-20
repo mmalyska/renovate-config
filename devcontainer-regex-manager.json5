@@ -5,10 +5,10 @@
       customType: 'regex',
       description: 'Update image version in devcontainer files.',
       fileMatch: [
-        '^\.devcontainer\/devcontainer\.json$'
+        '^\\.devcontainer\\/devcontainer\\.json$'
       ],
       matchStrings: [
-        '"image":\s*"(?<depName>[^:]+):(?<currentValue>[^@"]+)(?:@(?<currentDigest>sha256:[a-f0-9]+))?"'
+        '"image":\\s*"(?<depName>[^:]+):(?<currentValue>[^@"]+)(?:@(?<currentDigest>sha256:[a-f0-9]+))?"'
       ],
       autoReplaceStringTemplate: '"image": "{{depName}}:{{newValue}}{{#if newDigest}}@{{newDigest}}{{/if}}"',
       "datasourceTemplate": "docker"
