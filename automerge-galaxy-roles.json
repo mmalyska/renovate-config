@@ -1,12 +1,3 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "packageRules": [
-      {
-        "matchDatasources": ["galaxy-role"],
-        "automerge": true,
-        "automergeType": "branch",
-        "matchUpdateTypes": ["minor", "patch"],
-        "ignoreTests": false
-      }
-    ]
-  }
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json"
+}
