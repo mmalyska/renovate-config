@@ -3,7 +3,7 @@ status: proposed
 size: big
 profile: STANDARD
 topology: HANDOFF
-pr: null
+pr: 4
 ---
 
 # Renovate 45 migration plan
