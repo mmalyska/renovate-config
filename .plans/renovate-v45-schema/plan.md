@@ -14,9 +14,10 @@ pr: 4
 merge b21cce1edd2e3a2ca1a86d99dc9881d21ce0d5ad), unchanged here.
 The owner authorized this separate plan PR, not implementation.
 The owner subsequently excluded all archived repositories as unused (message
-1575870273436000428): no archived repository gates or migration tasks apply.
+1575870273436000428). Forks and private repositories are also excluded (message
+1575872017083924632); no excluded repository creates gates or migration tasks.
 [Repository assessment](inventory.md) records the 28-repository snapshot,
-six active shared consumers, four independent configs,
+six active shared consumers within 10 retained repositories,
 local migration candidates, source SHAs and unresolved runner coverage.
 There is no repository plan checker or existing plan-layout convention on main;
 this PR introduces a minimal active-plan index without changing repository rules.
@@ -42,7 +43,7 @@ mmalyska/github-workflows, and shared JSON/JSON5 presets plus README in
 mmalyska/renovate-config. Regression fixtures/scripts for those changes may be
 added under tests/ in the respective repository. Consumers stay read-only.
 Home-ops schema candidates require separate authorization;
-independent configs must not be silently made consumers of shared policy.
+forks, private and archived repositories remain outside all audit gates.
 
 ## Delivery sequence and gates
 
